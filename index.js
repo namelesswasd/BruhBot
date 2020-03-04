@@ -168,7 +168,6 @@ client.on('message', async message => {
         message.content.send(`https://www.discordapp.com/channels/${guild.id}/${message.guild.id}`)
         .catch(message.reply("nu esti intr-un voice channel ca sa faci asta."))
     }
-    .catch();
 })
 
 //
@@ -256,6 +255,5 @@ client.on('message',message => {
         message.channel.send("until the sun comes up in the morn")
     }
 })
-.catch();
 
 client.login();
