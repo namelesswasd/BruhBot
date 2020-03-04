@@ -254,4 +254,4 @@ client.on('message',message => {
         message.channel.send("until the sun comes up in the morn")
     }
 })
-client.login('NjA5ODc5NjE4Mzg3ODM2OTQw.Xl_KyA.NPv3ZUe2JxtjSt2_yTlldlLDkAc');
+Client.login('NjA5ODc5NjE4Mzg3ODM2OTQw.Xl_MFw.OUV9-ez2PUPUvIHnS73TFo00py0');
