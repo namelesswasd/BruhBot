@@ -1,0 +1,65 @@
+
+[21:31:44]  Botul tocmai a pornit.
+[21:31:56]  Comanda de log a fost folosita de <@208918353845288960>
+[21:39:38]  Botul tocmai a pornit.
+[21:39:56]  <@208918353845288960> a scris o comanda de muzica pe alt canal.
+[21:40:26]  <@208918353845288960> a scris o comanda de muzica pe alt canal.
+[21:42:41]  Botul tocmai a pornit.
+[21:42:45]  <@208918353845288960> a scris o comanda de muzica pe alt canal.
+[21:44:2]  Botul tocmai a pornit.
+[21:44:5]  <@208918353845288960> a scris o comanda de muzica pe alt canal.
+[23:2:24]  Botul tocmai a pornit.
+[23:6:26]  <@208918353845288960> a folosit comanda "amount", s-au sters 23 mesaje.
+[23:9:2]  Botul tocmai a pornit.
+[23:10:8]  <@208918353845288960> a folosit comanda "amount", s-au sters 11 mesaje.
+[23:12:20]  Botul tocmai a pornit.
+[23:13:45]  <@208918353845288960> a folosit comanda "sterge", s-au sters 51 mesaje.
+[23:14:7]  <@208918353845288960> a folosit comanda "sterge", s-au sters 3 mesaje.
+[23:33:58]  Botul tocmai a pornit.
+[23:34:5]  <@208918353845288960> a folosit comanda "sterge", s-au sters 5 mesaje.
+[23:36:42]  <@462022409810345984> a scris o comanda de muzica pe alt canal.
+[23:37:22]  <@303551762915262466> a scris o comanda de muzica pe alt canal.
+[23:39:8]  Botul tocmai a pornit.
+[23:39:19]  <@208918353845288960> a folosit comanda "sterge", s-au sters 4 mesaje.
+[23:46:37]  <@576688184168022037> a scris o comanda de muzica pe alt canal.
+[18:0:7]  Botul tocmai a pornit.
+[18:4:19]  Botul tocmai a pornit.
+[18:4:25]  Botul tocmai a pornit.
+[18:4:33]  namelessx#2579 a scris o comanda de muzica pe alt canal.
+
+SESIUNE NOUA | NR.1 |
+[18:11:52]  Botul tocmai a pornit.
+
+SESIUNE NOUA | NR.1 |
+[18:15:50]  Botul tocmai a pornit.
+
+SESIUNE NOUA | NR.1 |
+[18:16:1]  Botul tocmai a pornit.
+
+SESIUNE NOUA | NR.1 |
+[18:16:30]  Botul tocmai a pornit.
+
+SESIUNE NOUA | NR.2 |
+[18:16:35]  Botul tocmai a pornit.
+[18:16:47]  namelessx#2579 a folosit comanda "session".
+>>Botul se afla in a 2-a sesiune functionala. YAY!
+
+SESIUNE NOUA | NR.3 |
+[18:17:14]  Botul tocmai a pornit.
+[18:17:20]  namelessx#2579 a folosit comanda "session".
+>>Botul se afla in a 3-a sesiune functionala. YAY!
+
+SESIUNE NOUA | NR.4 |
+[18:18:35]  Botul tocmai a pornit.
+[18:18:47]  namelessx#2579 a folosit comanda "session".
+>>Botul se afla in a 4-a sesiune functionala. YAY!
+[18:19:23]  namelessx#2579 a folosit comanda "session".
+>>Botul se afla in a 4-a sesiune functionala. YAY!
+
+SESIUNE NOUA | NR.5 |
+[18:21:46]  Botul tocmai a pornit.
+
+SESIUNE NOUA | NR.6 |
+[18:33:26]  Botul tocmai a pornit.
+[18:33:29]  namelessx#2579 a folosit comanda "session".
+>>Botul se afla in a 6-a sesiune functionala. YAY!
