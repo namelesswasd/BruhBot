@@ -1,1 +1,1 @@
-# BruhBot
+# NLXbot
