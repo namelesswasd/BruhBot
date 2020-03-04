@@ -10,7 +10,7 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
-client.login('NjA5ODc5NjE4Mzg3ODM2OTQw.Xl_MFw.OUV9-ez2PUPUvIHnS73TFo00py0');
+client.login(token.env.BOT_TOKEN);
 
 function dateLog(){
     d = new Date();
