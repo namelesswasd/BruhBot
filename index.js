@@ -118,29 +118,6 @@ client.on('message', async message => {
         console.log(`\n${output} ${message.member.user.tag} a folosit comanda "mamaluibilainvizita".`)
     }
 
-    //arata avatarul (NU MERGE!!!!!)
-    if(command === "avatar"){
-        if(!message.mentions.users.size){
-            return message.channel.send(`Avatarul tau: <${message.author.displayAvatarURL}>`)
-        }
-    }
-
-    //danu
-    if(command === "danu"){
-        var random = Math.floor(Math.random())
-        if(!args[0]){
-            message.channel.send("Trebuie sa spui ceva ca sa pot sa zic _da sau nu_")
-        } else {
-            message.channel.send(random)
-            /*if (random === 0) {
-                message.reply(" da."+"_("+random+")_" )
-            } else {
-                message.reply(" nu."+"_("+random+")_" )
-            }
-            */
-        }
-    }
-
     if(command === "log"){
         dateLog();fs.appendFileSync("log.txt",`\n${output} Comanda de log a fost folosita de ${message.member.user.tag}`);
         console.log(`\n${output} Comanda de log a fost folosita de ${message.member.user.tag}`)
@@ -162,11 +139,6 @@ client.on('message', async message => {
         } else {
             message.channel.bulkDelete(amount)
         }
-    }
-    //partajare (NU MERGE)
-    if(command === 'partajare'){
-        message.content.send(`https://www.discordapp.com/channels/${guild.id}/${message.guild.id}`)
-        .catch(message.reply("nu esti intr-un voice channel ca sa faci asta."))
     }
 })
 
