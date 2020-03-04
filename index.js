@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
+require('dotenv').config();
 const fs = require("fs");
 const client= new Discord.Client();
-const prefix = '//';
+const prefix = process.env.PREFIX;
 var creeperSaid = false;
 var totalSeconds = 0, onOffTimer = 0, rSecundeTotale = 0;
 var hour=0,minute=0,seconds=0;
@@ -9,8 +10,6 @@ var BilaCounter = parseInt(fs.readFileSync('BilaCounter.txt', 'utf8'));
 var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
-
-client.login(token.env.BOT_TOKEN);
 
 function dateLog(){
     d = new Date();
@@ -256,3 +255,5 @@ client.on('message',message => {
         message.channel.send("until the sun comes up in the morn")
     }
 })
+
+client.login();
