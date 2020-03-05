@@ -3,7 +3,7 @@ const fs = require("fs");
 const client= new Discord.Client();
 const prefix = '//';
 require('dotenv').config();
-var token = process.env.TOKEN;
+const token = process.env.TOKEN;
 var creeperSaid = false;
 var totalSeconds = 0, onOffTimer = 0, rSecundeTotale = 0;
 var hour=0,minute=0,seconds=0;
