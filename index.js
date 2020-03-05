@@ -229,4 +229,4 @@ client.on('message',message => {
     }
 })
 
-client.login(TOKEN.TOKEN);
+client.login(token);
