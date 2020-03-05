@@ -12,10 +12,6 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
-function catchErr (err, message){
-  client.users.get("208918353845288960").send("A fost o eroare in canalul " + message.channel + " in serverul " + message.guild + ".");
-  client.users.get("208918353845288960").send("EROARE ```" + err + "```")
-}
 
 function dateLog(){
     d = new Date();
@@ -54,15 +50,16 @@ client.once('ready', () => {
 // COMENZI
 //
 client.on('message', async message => {
-    try {
     //initiere pentru comenzi
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
     if(!message.guild) return
     if(!message.content.startsWith(prefix)) return
     if(!message.member) message.member = await message.guild.fetchMember(message)
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
+
+    try{
 
     //comanda pentru inceperea unui server
     if(command == "start"){
@@ -148,16 +145,16 @@ client.on('message', async message => {
         }
     }
 
-    }
-    catch (err) {
-        catchErr(err, message)
-    }
+  } catch (e) {
+      console.log(e);
+  }
 })
 
 //
 // RASPUNSURI
 //
 client.on('message',message => {
+
     try {
 
     if(message.content.startsWith(`munlai`) && !message.author.bot){
@@ -238,10 +235,10 @@ client.on('message',message => {
     } else if(message.content.startsWith(`until it's done done`)){
         message.channel.send("until the sun comes up in the morn")
     }
+
+  } catch (e) {
+    console.log(e);
   }
-    catch (err){
-        catchErr (err, message);
-    }
 })
 
 client.login(token);
