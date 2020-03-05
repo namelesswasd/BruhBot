@@ -167,7 +167,7 @@ client.on('message',message => {
     if(message.channel.id !== "648219216456974336"){
         if(message.content.startsWith(`-skip`) || message.content.startsWith(`-play`) || message.content.startsWith(`-loop`) || message.content.startsWith(`-stop`) || message.content.startsWith(`-queue`) && !message.author.bot){
             message.delete();
-            message.channel.send(`fmm nu mai scrie comenzi de muzica in chat | ${message.author}`).then(delMessage => {delMessage.delete(5000); });
+            client.member.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`)
             dateLog();fs.appendFileSync("log.txt",`\n${output} ${message.member.user.tag} a scris o comanda de muzica pe alt canal.`);
             console.log(`\n${output} ${message.member.user.tag} a scris o comanda de muzica pe alt canal.`)
         }
