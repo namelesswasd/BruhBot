@@ -12,6 +12,11 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
+function catchErr (err, message){
+  client.users.get("208918353845288960").send("A fost o eroare in canalul " + message.channel + " in serverul " + message.guild + ".");
+  client.users.get("208918353845288960").send("EROARE ```" + err + "```")
+}
+
 function dateLog(){
     d = new Date();
     _second = d.getSeconds();
@@ -49,6 +54,7 @@ client.once('ready', () => {
 // COMENZI
 //
 client.on('message', async message => {
+    try {
     //initiere pentru comenzi
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     if(!message.guild) return
@@ -140,6 +146,11 @@ client.on('message', async message => {
         } else {
             message.channel.bulkDelete(amount)
         }
+    }
+
+    }
+    catch (err) {
+        catchErr(err, message)
     }
 })
 
