@@ -1,12 +1,8 @@
 const Discord = require("discord.js");
 require('dotenv').config();
 const fs = require("fs");
-const config = {
-  token: 'NjA5ODc5NjE4Mzg3ODM2OTQw.XmEK6w.uyUO0XtT-rVkB75WHlEKMclR8do',
-  prefix: '//'
-}
 const client= new Discord.Client();
-const prefix = config.prefix;
+const prefix = '//';
 var creeperSaid = false;
 var totalSeconds = 0, onOffTimer = 0, rSecundeTotale = 0;
 var hour=0,minute=0,seconds=0;
@@ -232,4 +228,4 @@ client.on('message',message => {
     }
 })
 
-client.login(config.token);
+client.login('NjA5ODc5NjE4Mzg3ODM2OTQw.XmEK6w.uyUO0XtT-rVkB75WHlEKMclR8do');
