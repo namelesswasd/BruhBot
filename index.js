@@ -12,10 +12,6 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
-app.listen(process.env.PORT || 3000 ,function(){
-    console.log("up and running on port "+process.env.PORT);
-});
-
 function dateLog(){
     d = new Date();
     _second = d.getSeconds();
