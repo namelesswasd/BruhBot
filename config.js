@@ -1,1 +1,0 @@
-exports.TOKEN = 'NjA5ODc5NjE4Mzg3ODM2OTQw.XmEK6w.uyUO0XtT-rVkB75WHlEKMclR8do';
