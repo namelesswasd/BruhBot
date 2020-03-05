@@ -238,11 +238,9 @@ client.on('message',message => {
     } else if(message.content.startsWith(`until it's done done`)){
         message.channel.send("until the sun comes up in the morn")
     }
+    catch (err, message){
+        catchErr (err);
+    }
 })
-catch(err){
-    catchErr (err,message);
-}
-
-
 
 client.login(token);
