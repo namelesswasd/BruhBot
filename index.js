@@ -158,7 +158,7 @@ client.on('message', async message => {
 // RASPUNSURI
 //
 client.on('message',message => {
-
+    try {
 
     if(message.content.startsWith(`munlai`) && !message.author.bot){
         if(message.guild.voiceConnection){
@@ -239,5 +239,10 @@ client.on('message',message => {
         message.channel.send("until the sun comes up in the morn")
     }
 })
+catch(err){
+    catchErr (err,message);
+}
+
+
 
 client.login(token);
