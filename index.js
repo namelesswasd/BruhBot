@@ -72,7 +72,14 @@ client.once('ready', () => { //pornirea BOT-ului
         }
     })
 })
-
+//
+// USER JOIN
+//
+client.on('guildMemberAdd', guildMember => {
+    if(guildMember.id === "474901267362217984"){
+        guildMember.send("du-te la highman :*").then(guildMember.kick())
+    }
+})
 //
 // COMENZI
 //
