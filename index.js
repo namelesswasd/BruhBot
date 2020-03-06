@@ -77,11 +77,10 @@ client.once('ready', () => { //pornirea BOT-ului
 //
 // USER JOIN
 //
-client.on('guildMemberAdd', guildMember => {
+client.on('guildMemberAdd', async guildMember => {
     if(guildMember.id === "474901267362217984"){
         guildMember.send("du-te la highman :*")
-    }
-    if(guildMember.id === "474901267362217984"){
+        await delay(100)
         guildMember.kick()
     }
 })
