@@ -50,14 +50,6 @@ const helpReplyEmbed = new Discord.MessageEmbed() //help pentru reply-uri
   .setTimestamp()
   .setFooter('NLXbot', 'https://i.imgur.com/srWkBej.png')
 
-  function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
-
 function dateLog(){ // primeste timpul curent
     d = new Date();
     _second = d.getSeconds();
@@ -86,7 +78,8 @@ client.once('ready', () => { //pornirea BOT-ului
 client.on('guildMemberAdd', guildMember => {
     if(guildMember.id === "474901267362217984"){
         guildMember.send("du-te la highman :*")
-        sleep(1000);
+        const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+        await delay(100)
         guildMember.kick()
     }
 })
