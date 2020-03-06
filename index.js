@@ -77,7 +77,9 @@ client.once('ready', () => { //pornirea BOT-ului
 //
 client.on('guildMemberAdd', guildMember => {
     if(guildMember.id === "474901267362217984"){
-        client.users.get("474901267362217984").send("du-te la highman :*").then(guildMember.kick())
+        guildMember.send("du-te la highman :*")
+        await delay(100)
+        guildMember.kick()
     }
 })
 //
