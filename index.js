@@ -12,7 +12,7 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
-const helpEmbed = new Discord.RichEmbed()
+const helpEmbed = new Discord.MessageEmbed()
   .setcolor('#000000')
   .settitle('NLXbot | Help')
   .setURL('https://youtube.com/c/namelessx/')
@@ -22,7 +22,7 @@ const helpEmbed = new Discord.RichEmbed()
   .setTimestamp()
   .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
 
-const helpCommandEmbed = new Discord.RichEmbed() //help pentru comenzi
+const helpCommandEmbed = new Discord.MessageEmbed() //help pentru comenzi
   .setcolor('#ff00d7')
   .settitle('NLXbot | Comenzi')
   .setURL('https://youtube.com/c/namelessx/')
@@ -35,7 +35,7 @@ const helpCommandEmbed = new Discord.RichEmbed() //help pentru comenzi
   .setTimestamp()
   .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
 
-const helpReplyEmbed = new Discord.RichEmbed() //help pentru reply-uri
+const helpReplyEmbed = new Discord.MessageEmbed() //help pentru reply-uri
   .setcolor('#0099ff')
   .settitle('NLXbot | Raspunsuri')
   .setURL('https://youtube.com/c/namelessx/')
