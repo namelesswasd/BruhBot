@@ -51,7 +51,7 @@ const helpReplyEmbed = new Discord.MessageEmbed() //help pentru reply-uri
   .setTimestamp()
   .setFooter('NLXbot', 'https://i.imgur.com/srWkBej.png')
 
-async function kickCostache {
+async function kickCostache() {
     guildMember.send("du-te la highman :*")
     await delay(500)
     guildMember.kick()
