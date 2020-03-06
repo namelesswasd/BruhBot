@@ -12,8 +12,45 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
+const helpEmbed = new Discord.RichEmbed()
+  .setcolor('#000000')
+  .settitle('NLXbot | Help')
+  .setURL('https://youtube.com/c/namelessx/')
+  .setAuthor('de namelessx', 'https://imgur.com/a/1S0Nh6j', 'https://youtube.com/c/namelessx/')
+  .addField(`${prefix}helpCommands`, '_Tot ajutorul pentru comenzile BOT-ului_')
+  .addField(`${prefix}helpReply`, '_Tot ajutorul pentru raspunsurile BOT-ului_')
+  .setTimestamp()
+  .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
 
-function dateLog(){
+const helpCommandEmbed = new Discord.RichEmbed() //help pentru comenzi
+  .setcolor('#ff00d7')
+  .settitle('NLXbot | Comenzi')
+  .setURL('https://youtube.com/c/namelessx/')
+  .setAuthor('de namelessx', 'https://imgur.com/a/1S0Nh6j', 'https://youtube.com/c/namelessx/')
+  .setDescription(`Toate comenzile incep cu prexiul **${prefix}**`)
+  .addField('session', '_Arata numarul sesiunii active._')
+  .addField('remind **(WIP)**', '_Reaminteste ceva._', true)
+  .addField('remindInfo **(WIP)**', '_Arata reamintirea activa._')
+  .addField('sterge <numar mesaje>', '_Sterge un anumit numar de mesage_\n_**Aceasta comanda nu va merge cu mesaje mai vechi de 2 saptamani**_')
+  .setTimestamp()
+  .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
+
+const helpReplyEmbed = new Discord.RichEmbed() //help pentru reply-uri
+  .setcolor('#0099ff')
+  .settitle('NLXbot | Raspunsuri')
+  .setURL('https://youtube.com/c/namelessx/')
+  .setAuthor('de namelessx', 'https://imgur.com/a/1S0Nh6j', 'https://youtube.com/c/namelessx/')
+  .setDescription('Aceste comenzi pot fi executate oricand intr-un mesaj.')
+  .addField('Toate comezile pentru BOT-ul de muzica care nu sunt executate in canalui de #muzica vor fi sterse', '...alaturi de un mesaj privat.')
+  .addField('bylaboy', '_Cuvantul interzis..._')
+  .addField('boomer', '_...si **zoomer**_', true)
+  .addField('sall', '_alaturi de **pugi sula**_')
+  .addField('unghie' , '_unghie ala care il suge x10_', true)
+  .addField('creeper', '_Tot refrenul de la melodia lui CaptainSparkles_')
+  .setTimestamp()
+  .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
+
+function dateLog(){ // primeste timpul curent
     d = new Date();
     _second = d.getSeconds();
     _hour = d.getHours();
@@ -21,17 +58,7 @@ function dateLog(){
     output = `[${_hour}:${_minutes}:${_second}] `;
 }
 
-function countTimer() {
-    if(onOffTimer){
-        totalSeconds = totalSeconds + 1;
-        hour = Math.floor(totalSeconds /3600);
-        minute = Math.floor((totalSeconds - hour*3600)/60);
-        seconds = totalSeconds - (hour*3600 + minute*60);
-        setTimeout(countTimer, 1000);
-    }
-}
-
-client.once('ready', () => {
+client.once('ready', () => { //pornirea BOT-ului
     sessionNumber++;
     fs.writeFileSync('sessionNumber.txt', sessionNumber);
     dateLog();
@@ -49,17 +76,35 @@ client.once('ready', () => {
 //
 // COMENZI
 //
-client.on('message', async message => {
+client.on('message', async message => { //de fiecare data cand se trimite un mesaj
     //initiere pentru comenzi
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     if(!message.guild) return
     if(!message.content.startsWith(prefix)) return
-    if(!message.member) message.member = await message.guild.fetchMember(message)
+    if(!message.member) message.member = await message.guild.fetchMember(message) //detectarea cand se primeste o comanda
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
+    const command = args.shift().toLowerCase(); //despartirea parametrilor
 
     try{
+
+    if(command === "help"){
+        message.author.send(helpEmbed)
+        message.delete()
+        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "help".`)
+    }
+
+    if(command === "helpCommands"){
+        message.author.send(helpCommandEmbed)
+        message.delete()
+        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "helpCommands".`)
+    }
+
+    if(command === "helpReply"){
+        message.author.send(helpReplyEmbed)
+        message.delete()
+        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "helpReply".`)
+    }
 
     //comanda pentru inceperea unui server
     if(command == "start"){
@@ -73,7 +118,7 @@ client.on('message', async message => {
         console.log(`\n${output} ${message.member.user.tag} a folosit comanda "start".`);
     }
 
-    if(command === "session"){
+    if(command === "session"){ //sesiune activa
         message.reply(`BOT-ul se afla in a ${sessionNumber}-a sesiune activa.`)
         dateLog();fs.appendFileSync("log.txt",`\n${output} ${message.member.user.tag} a folosit comanda "session".\n>>Botul se afla in a ${sessionNumber}-a sesiune functionala. YAY!`)
         console.log(`\n${output} ${message.member.user.tag} a folosit comanda "session".\n>>Botul se afla in a ${sessionNumber}-a sesiune functionala. YAY!`)
@@ -96,38 +141,12 @@ client.on('message', async message => {
             message.reply(`task-ul ${rTask} va fi reamintit in ${rSecundeTotale} (de) secunde.`)
         }
     }
-
-    //timer cand botul intra intr-un vc
-    if(command === "coltul"){
-        if(!message.member.voiceChannel){
-            message.channel.sendMessage("Nu esti intr-un VC ca sa vezi cat am stat in coltul rusinii")
-        } else {
-            message.channel.sendMessage("Redau linistea de "+hour+" ore, "+minute+" minute si "+seconds+" (de) secunde.")
-        }
-        dateLog();fs.appendFileSync("log.txt",`\n${output} ${message.member.user.tag} a folosit comanda "coltul".`);
-        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "coltul".`)
-    }
-
-    if(command === "vinemamaluibila"){
-        BilaCounter++
-        fs.writeFileSync('BilaCounter.txt', BilaCounter)
-        message.reply(` Ma-sa lui Bila a zis ca il duce pe Mario la politie, dar nu a facut asta. (${BilaCounter} ori)`)
-        dateLog();fs.appendFileSync("log.txt",`\n${output} ${message.member.user.tag} a folosit comanda "vinemamaluibila" (de ${BilaCounter}).`);
-        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "vinemamaluibila" (de ${BilaCounter}).`)
-    }
-
-    if(command === "mamaluibilainvizita"){
-        message.reply(` Ma-sa lui Bila a zis ca il duce pe Mario la politie de  ${BilaCounter} ori, dar nu a facut asta.`)
-        dateLog();fs.appendFileSync("log.txt",`\n${output} ${message.member.user.tag} a folosit comanda "mamaluibilainvizita".`);
-        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "mamaluibilainvizita".`)
-    }
+    //
 
     if(command === "log"){
         dateLog();fs.appendFileSync("log.txt",`\n${output} Comanda de log a fost folosita de ${message.member.user.tag}`);
         console.log(`\n${output} Comanda de log a fost folosita de ${message.member.user.tag}`)
     }
-
-    //bila e prost?
 
     //sterge
     if(command === "sterge"){
@@ -157,17 +176,10 @@ client.on('message',message => {
 
     try {
 
-    if(message.content.startsWith(`munlai`) && !message.author.bot){
-        if(message.guild.voiceConnection){
-            message.dispatcher.end()
-            message.member.voiceChannel.leave()
-        }
-    }
-
     if(message.channel.id !== "648219216456974336"){
         if(message.content.startsWith(`-skip`) || message.content.startsWith(`-play`) || message.content.startsWith(`-loop`) || message.content.startsWith(`-stop`) || message.content.startsWith(`-queue`) && !message.author.bot){
             message.delete();
-            message.author.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`)
+            message.author.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`);
             dateLog();fs.appendFileSync("log.txt",`\n${output} ${message.member.user.tag} a scris o comanda de muzica pe alt canal.`);
             console.log(`\n${output} ${message.member.user.tag} a scris o comanda de muzica pe alt canal.`)
         }
