@@ -5,6 +5,7 @@ const prefix = '//';
 const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 require('dotenv').config();
 const token = process.env.TOKEN;
+const costacheToggle = false;
 var creeperSaid = false;
 var totalSeconds = 0, onOffTimer = 0, rSecundeTotale = 0;
 var hour=0,minute=0,seconds=0;
@@ -79,6 +80,11 @@ client.once('ready', () => { //pornirea BOT-ului
 client.on('guildMemberAdd', guildMember => {
     if(guildMember.id === "474901267362217984"){
         guildMember.send("du-te la highman :*")
+        costacheToggle = true
+        if(costacheToggle === true){
+            guildMember.kick()
+            costacheToggle = false
+        }
     }
 })
 //
