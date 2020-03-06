@@ -97,13 +97,13 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
     if(command === "commandhelp"){
         message.author.send(helpCommandEmbed)
         message.delete()
-        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "helpCommands".`)
+        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "commandhelp".`)
     }
 
     if(command === "replyhelp"){
         message.author.send(helpReplyEmbed)
         message.delete()
-        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "helpReply".`)
+        console.log(`\n${output} ${message.member.user.tag} a folosit comanda "replyhelp".`)
     }
 
     //comanda pentru inceperea unui server
