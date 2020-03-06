@@ -94,13 +94,13 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
         console.log(`\n${output} ${message.member.user.tag} a folosit comanda "help".`)
     }
 
-    if(command === "helpCommands"){
+    if(command === "commandhelp"){
         message.author.send(helpCommandEmbed)
         message.delete()
         console.log(`\n${output} ${message.member.user.tag} a folosit comanda "helpCommands".`)
     }
 
-    if(command === "helpReply"){
+    if(command === "replyhelp"){
         message.author.send(helpReplyEmbed)
         message.delete()
         console.log(`\n${output} ${message.member.user.tag} a folosit comanda "helpReply".`)
