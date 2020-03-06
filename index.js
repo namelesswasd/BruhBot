@@ -13,8 +13,8 @@ var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
 const helpEmbed = new Discord.MessageEmbed()
-  .setcolor('#000000')
-  .settitle('NLXbot | Help')
+  .setColor('#000000')
+  .setTitle('NLXbot | Help')
   .setURL('https://youtube.com/c/namelessx/')
   .setAuthor('de namelessx', 'https://imgur.com/a/1S0Nh6j', 'https://youtube.com/c/namelessx/')
   .addField(`${prefix}helpCommands`, '_Tot ajutorul pentru comenzile BOT-ului_')
@@ -23,8 +23,8 @@ const helpEmbed = new Discord.MessageEmbed()
   .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
 
 const helpCommandEmbed = new Discord.MessageEmbed() //help pentru comenzi
-  .setcolor('#ff00d7')
-  .settitle('NLXbot | Comenzi')
+  .setColor('#ff00d7')
+  .setTitle('NLXbot | Comenzi')
   .setURL('https://youtube.com/c/namelessx/')
   .setAuthor('de namelessx', 'https://imgur.com/a/1S0Nh6j', 'https://youtube.com/c/namelessx/')
   .setDescription(`Toate comenzile incep cu prexiul **${prefix}**`)
@@ -36,8 +36,8 @@ const helpCommandEmbed = new Discord.MessageEmbed() //help pentru comenzi
   .setFooter('NLXbot', 'https://imgur.com/a/1S0Nh6j')
 
 const helpReplyEmbed = new Discord.MessageEmbed() //help pentru reply-uri
-  .setcolor('#0099ff')
-  .settitle('NLXbot | Raspunsuri')
+  .setColor('#0099ff')
+  .setTitle('NLXbot | Raspunsuri')
   .setURL('https://youtube.com/c/namelessx/')
   .setAuthor('de namelessx', 'https://imgur.com/a/1S0Nh6j', 'https://youtube.com/c/namelessx/')
   .setDescription('Aceste comenzi pot fi executate oricand intr-un mesaj.')
