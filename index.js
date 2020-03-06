@@ -80,11 +80,9 @@ client.once('ready', () => { //pornirea BOT-ului
 client.on('guildMemberAdd', guildMember => {
     if(guildMember.id === "474901267362217984"){
         guildMember.send("du-te la highman :*")
-        costacheToggle = 1
-        if(costacheToggle === 1){
-            guildMember.kick()
-            costacheToggle = 0
-        }
+    }
+    if(guildMember.id === "474901267362217984"){
+        guildMember.kick()
     }
 })
 //
