@@ -93,6 +93,8 @@ client.on('guildMemberAdd', async guildMember => {
 // COMENZI
 //
 client.on('message', async message => { //de fiecare data cand se trimite un mesaj
+    var member = message.member.tag;
+
     //initiere pentru comenzi
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     if(!message.guild) return
