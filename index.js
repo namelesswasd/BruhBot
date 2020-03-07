@@ -62,7 +62,7 @@ function dateLog(){ // primeste timpul curent
 
 function logOut(memberLog, commandLog){
     dateLog();
-    console.log(`${output}${memberLog} a folosit comanda ${commandLog}`);
+    console.log(`${output}${memberLog} a folosit comanda "${commandLog}"`);
 }
 
 client.once('ready', () => { //pornirea BOT-ului
@@ -93,7 +93,6 @@ client.on('guildMemberAdd', async guildMember => {
 // COMENZI
 //
 client.on('message', async message => { //de fiecare data cand se trimite un mesaj
-    var member = message.member.tag;
 
     //initiere pentru comenzi
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -109,19 +108,19 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
     if(command === "help"){
         message.author.send(helpEmbed)
         message.delete()
-        logOut(member, command);
+        logOut(message.member.tag, command);
     }
 
     if(command === "commandhelp"){
         message.author.send(helpCommandEmbed)
         message.delete()
-        logOut(member, command);
+        logOut(message.member.tag, command);
     }
 
     if(command === "replyhelp"){
         message.author.send(helpReplyEmbed)
         message.delete()
-        logOut(member, command);
+        logOut(message.member.tag, command);
     }
 
     //comanda pentru inceperea unui server
@@ -132,12 +131,12 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
         message.channel.send("Daca ai o suggestie pentru bot poti mereu sa ii dai tag lui Vlad _(@nlx)_")
         message.channel.send("**acum mars drq de aici si du-te pe alt canal**")
         message.react('👌')
-        logOut(member, command);
+        logOut(message.member.tag, command);
     }
 
     if(command === "session"){ //sesiune activa
         message.reply(`BOT-ul se afla in a ${sessionNumber}-a sesiune activa.`)
-        logOut(member, command);
+        logOut(message.member.tag, command);
     }
     //reamintire (timer)
     if(command === "remind"){
@@ -160,7 +159,7 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
     //
 
     if(command === "log"){
-        logOut(member, command);
+        logOut(message.member.tag, command);
     }
 
     //sterge
@@ -194,7 +193,7 @@ client.on('message',message => {
         if(message.content.startsWith(`-skip`) || message.content.startsWith(`-play`) || message.content.startsWith(`-loop`) || message.content.startsWith(`-stop`) || message.content.startsWith(`-queue`) && !message.author.bot){
             message.delete();
             message.author.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`);
-            logOut(member, "<comanda de muzica in canalul gresit>");
+            logOut(message.member.tag, "<comanda de muzica in canalul gresit>");
         }
     }
 
@@ -202,7 +201,7 @@ client.on('message',message => {
         const kickByla = message.author
         console.log(kickByla.username + " a zis cuvantul interzis")
         if(kickByla){
-            logOut(member, "<bylaboy scris in chat>");
+            logOut(message.member.tag, "<bylaboy scris in chat>");
             try {message.guild.members.get(kickByla.id).kick().then(message.channel.send("User-ul "+kickByla+" a spus cuvantul interzis..."+`\n_${kickByla} si-a luat kick_`))}
             catch {message.channel.send("User-ul "+kickByla+" nu a putut fi dat afara din cauza ca are rank-ul mai mare decat bot-ul\n_Ai scapat de data asta..._")}}
     }
