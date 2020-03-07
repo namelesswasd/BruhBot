@@ -187,9 +187,9 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
 //
 client.on('message',message => {
 
-    try {
-
-    if(message.channel.id !== "648219216456974336" && message.guild.id === "609880608260489217"){
+    try{
+      
+    if(message.guild.id !== "648219216456974336" && message.guild.id === "609880608260489217"){
         if(message.content.startsWith(`-skip`) || message.content.startsWith(`-play`) || message.content.startsWith(`-loop`) || message.content.startsWith(`-stop`) || message.content.startsWith(`-queue`) && !message.author.bot){
             message.delete();
             message.author.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`);
