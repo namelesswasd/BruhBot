@@ -14,7 +14,7 @@ var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
 
-const helpEmbed = new Discord.MessageEmbed()
+const helpEmbed = new Discord.MessageEmbed()    
   .setColor('#000000')
   .setTitle('NLXbot | Help')
   .setURL('https://youtube.com/c/namelessx/')
@@ -166,8 +166,6 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
     if(command === "sterge"){
         const amount = parseInt(args[0]) + 1;
 
-
-
         if(isNaN(amount)){
             message.reply(" hmm, nu pare a fi un numar valid")
         } else if (amount <= 1 || amount >= 100) {
@@ -189,7 +187,7 @@ client.on('message',message => {
 
     try {
 
-    if(message.channel.id !== "648219216456974336" && message.channel.id === "609880608260489217"){
+    if(message.channel.id !== "648219216456974336" && message.channel.id !== "609880608260489217" && message.channel.id !== "687426274050048000"){
         if(message.content.startsWith(`-skip`) || message.content.startsWith(`-play`) || message.content.startsWith(`-loop`) || message.content.startsWith(`-stop`) || message.content.startsWith(`-queue`) && !message.author.bot){
             message.delete();
             message.author.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`);
