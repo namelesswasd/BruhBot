@@ -83,7 +83,7 @@ client.once('ready', () => { //pornirea BOT-ului
 // USER JOIN
 //
 client.on('guildMemberAdd', async member => {
-    const channel = member.guild.channels.cache.find(channel => channel.id("625340754839207955"))
+    const channel = member.guild.channels.cache.find(channel => channel.id === "625340754839207955")
     if(!channel) return;
 
     channel.send(`${member} 𝚊 𝚒𝚗𝚝𝚛𝚊𝚝 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
@@ -91,7 +91,7 @@ client.on('guildMemberAdd', async member => {
 })
 
 client.on('guildMemberRemove', async member => {
-    const channel = member.guild.channels.cache.find(channel => channel.id("625340754839207955"))
+    const channel = member.guild.channels.cache.find(channel => channel.id === "625340754839207955")
     if(!channel) return;
 
     channel.send(`${member} 𝚊 𝚒𝚎𝚜𝚒𝚝 𝚍𝚎 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
