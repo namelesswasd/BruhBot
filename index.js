@@ -82,13 +82,13 @@ client.once('ready', () => { //pornirea BOT-ului
 //
 // USER JOIN
 //
-/*client.on('guildMemberAdd', async guildMember => {
-    if(guildMember.id === "303551762915262466"){
-        guildMember.send("du-te la highman :*")
-        await delay(100)
-        guildMember.kick()
-    }
-})*/
+client.on('guildMemberAdd', async guildMember => {
+    client.channels.get("625340754839207955").send(`${guildMember.name} 𝚊 𝚒𝚗𝚝𝚛𝚊𝚝 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
+})
+
+client.on('guildMemberRemove', async guildMember => {
+    client.channels.get("625340754839207955").send(`${guildMember.name} 𝚊 𝚒𝚎𝚜𝚒𝚝 𝚍𝚎 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
+})
 //
 // COMENZI
 //
