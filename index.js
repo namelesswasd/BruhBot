@@ -87,7 +87,7 @@ client.on('guildMemberAdd', async member => {
     if(!channel) return;
 
     channel.send(`${member} 𝚊 𝚒𝚗𝚝𝚛𝚊𝚝 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
-    logOut(guildMember.name, "join")
+    logOut(member.name, "join")
 })
 
 client.on('guildMemberRemove', async member => {
@@ -95,7 +95,7 @@ client.on('guildMemberRemove', async member => {
     if(!channel) return;
 
     channel.send(`${member} 𝚊 𝚒𝚎𝚜𝚒𝚝 𝚍𝚎 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
-    logOut(guildMember.name, "leave")
+    logOut(member.name, "leave")
 })
 //
 // COMENZI
