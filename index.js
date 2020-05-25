@@ -84,10 +84,12 @@ client.once('ready', () => { //pornirea BOT-ului
 //
 client.on('guildMemberAdd', async guildMember => {
     client.channels.get("625340754839207955").send(`${guildMember.name} 𝚊 𝚒𝚗𝚝𝚛𝚊𝚝 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
+    logOut(guildMember.name, "join")
 })
 
 client.on('guildMemberRemove', async guildMember => {
     client.channels.get("625340754839207955").send(`${guildMember.name} 𝚊 𝚒𝚎𝚜𝚒𝚝 𝚍𝚎 𝚙𝚎 𝚜𝚎𝚛𝚟𝚎𝚛.`)
+    logOut(guildMember.name, "leave")
 })
 //
 // COMENZI
