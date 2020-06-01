@@ -195,7 +195,7 @@ client.on('message',message => {
 
     try {
 
-    if(message.channel.id !== "648219216456974336" && message.channel.id !== "609880608260489217" && message.channel.id !== "687426274050048000" && message.channel.id !== "714937656882233375"){
+    if(message.channel.id !== "688298855640465598" && message.channel.id !== "629780570611908628" && message.channel.id !== "648219216456974336" && message.channel.id !== "609880608260489217" && message.channel.id !== "687426274050048000" && message.channel.id !== "714937656882233375"){
         if(message.content.startsWith(`-skip`) || message.content.startsWith(`-play`) || message.content.startsWith(`-loop`) || message.content.startsWith(`-stop`) || message.content.startsWith(`-queue`) && !message.author.bot){
             message.delete();
             message.author.send(`fmm nu mai scrie comenzi de muzica in ${message.channel} pe serverul ${message.guild}`);
