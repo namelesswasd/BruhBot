@@ -70,12 +70,9 @@ client.once('ready', () => { //pornirea BOT-ului
     fs.writeFileSync('sessionNumber.txt', sessionNumber);
     dateLog();
     console.log('a venit nebunul de salam (bot pornit)')
-    client.user.setPresence({
-        game: {
-            name: "\"Bill\"",
-            type: "LISTENING"
-        }
-    })
+    client.user.setActivity("Bill", {
+        type: "LISTENING"
+      });
 })
 //
 // USER JOIN
