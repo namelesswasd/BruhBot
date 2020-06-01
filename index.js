@@ -70,8 +70,6 @@ client.once('ready', () => { //pornirea BOT-ului
     fs.writeFileSync('sessionNumber.txt', sessionNumber);
     dateLog();
     console.log('a venit nebunul de salam (bot pornit)')
-    fs.appendFileSync("log.txt",`\n\nSESIUNE NOUA | NR.${sessionNumber} |\n${output} Botul tocmai a pornit.`)
-    console.log(`\n\nSESIUNE NOUA | NR.${sessionNumber} |\n${output} Botul tocmai a pornit.`)
     client.user.setPresence({
         game: {
             name: "\"Bill\"",
