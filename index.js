@@ -5,11 +5,7 @@ const prefix = '//';
 const delay = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 require('dotenv').config();
 const token = process.env.TOKEN;
-const costacheToggle = 0;
 var creeperSaid = false;
-var totalSeconds = 0, onOffTimer = 0, rSecundeTotale = 0;
-var hour=0,minute=0,seconds=0;
-var BilaCounter = parseInt(fs.readFileSync('BilaCounter.txt', 'utf8'));
 var output;
 var d, _second, _hour, _minutes;
 var sessionNumber = parseInt(fs.readFileSync('sessionNumber.txt', 'utf8'));
@@ -69,7 +65,7 @@ client.once('ready', () => { //pornirea BOT-ului
     sessionNumber++;
     fs.writeFileSync('sessionNumber.txt', sessionNumber);
     dateLog();
-    console.log('a venit nebunul de salam (bot pornit)')
+    console.log('a venit nebunul de salam (bot pornit)\n-------------------------')
     client.user.setActivity("Bill", {
         type: "LISTENING"
       });
@@ -134,7 +130,8 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
         } else {
             var temp = "";
             for(i = 1; i <= args.length ; i++){
-                temp.concat(temp, " ", args[i]);
+                temp.concat(args[i]);
+                temp.concat(" ");
             }
         message.channel.send(temp)    
         }
