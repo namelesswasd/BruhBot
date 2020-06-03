@@ -126,6 +126,19 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
         logOut(message.member.user.tag, command);
     }
 
+    //reply command
+    if(command === "reply"){
+        message.delete()
+        if(!args[0]){
+            message.reply(` te rog precizeaza niste text.`)
+        } else {
+            for(i = 0; i <= args.length ; i++){
+                var replyMessage = ""
+                replyMessage.concat(replyMessage," ",args[i])
+            }
+        }
+    }
+
     //comanda pentru inceperea unui server
     if(command == "start"){
         message.channel.send("Salut! Bun venit la serveul lui Vlad _(nlx)_!")
