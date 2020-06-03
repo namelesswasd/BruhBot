@@ -132,11 +132,11 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
         if(!args[0]){
             message.reply(` te rog precizeaza niste text.`)
         } else {
-            for(i = 0; i <= args.length ; i++){
-                var replyMessage = ""
-                replyMessage.concat(replyMessage," ",args[i])
-                message.channel.send(replyMessage)
+            var temp = "";
+            for(i = 1; i <= args.length ; i++){
+                temp.concat(temp, " ", args[i]);
             }
+        message.channel.send(temo)    
         }
     }
 
