@@ -130,10 +130,10 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
         } else {
             var temp = "";
             for(i = 1; i <= args.length ; i++){
-                temp.concat(args[i]);
-                temp.concat(" ");
+                var res = temp.concat(args[i]);
+                res = temp.concat(" ");
             }
-        message.channel.send(temp)    
+        message.channel.send(res)    
         }
     }
 
