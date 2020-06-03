@@ -136,7 +136,7 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
             for(i = 1; i <= args.length ; i++){
                 temp.concat(temp, " ", args[i]);
             }
-        message.channel.send(temo)    
+        message.channel.send(temp)    
         }
     }
 
