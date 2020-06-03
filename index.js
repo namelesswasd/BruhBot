@@ -135,6 +135,7 @@ client.on('message', async message => { //de fiecare data cand se trimite un mes
             for(i = 0; i <= args.length ; i++){
                 var replyMessage = ""
                 replyMessage.concat(replyMessage," ",args[i])
+                message.channel.send(replyMessage)
             }
         }
     }
